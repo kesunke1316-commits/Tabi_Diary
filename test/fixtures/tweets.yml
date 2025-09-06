@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Title: MyString
+  Name: MyString
+  Date: 2025-07-31
+  Heritage: MyString
+  Detail: MyText
+
+two:
+  Title: MyString
+  Name: MyString
+  Date: 2025-07-31
+  Heritage: MyString
+  Detail: MyText

@@ -1,0 +1,29 @@
+.tweets-container {
+  width: 50%;
+  margin: 10px auto;
+  background-color: azure;
+}
+
+.new-post {
+  border-top: solid #00acee;
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+.tag {
+  list-style: none;
+}
+
+.search {
+  color:#0064F9
+}
+
+.post {
+  color:#0064F9
+}
+
+.article-container {
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}

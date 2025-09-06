@@ -1,0 +1,16 @@
+<h1>POST</h1>
+<h3>投稿詳細</h3>
+
+<div class="tweet">
+    <p><%= image_tag @tweet.image, size: '250x200' %></p>
+    <p><%= @tweet.Title %></p>
+    <p><%= @tweet.Name %></p>
+    <p><%= @tweet.Date %></p>
+    <p><%= @tweet.Detail %></p>
+</div>
+
+<% @tweet.tags.each do |tag| %>
+    <span><%= tag.name %></span>
+<% end %>
+
+<%= link_to "Tweet一覧に戻る", tweets_path %>

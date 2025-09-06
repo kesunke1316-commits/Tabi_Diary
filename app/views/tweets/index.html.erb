@@ -1,0 +1,53 @@
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+<header>
+<h1>MY PAGE</h1>
+<li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+</header>
+
+<div class="tweets-container">
+    <div class="new-post">
+        <%= link_to "新規投稿へ", new_tweet_path %>
+    </div>
+
+    <div class="search-container">
+        <div class="search">    
+        <h3>検索</h3>
+        </div>
+        <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+            <%= text_field_tag :search %>
+            <%= submit_tag 'ワード検索'  %>
+        <% end %>
+
+        <div class="tag">
+        <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+            <% Tag.all.each do |t| %>
+            <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+            <% end %>
+            <%= submit_tag 'タグ検索' %>
+        <% end %>
+
+        <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+            <%= text_field_tag :tag %>
+            <%= submit_tag 'タグを追加' %>
+        <% end %>
+    </div>
+
+    <div class="article-container">
+        <div class="post">
+        <h3>最新の投稿</h3>
+        </div>
+        <% @tweets.each do |t| %>
+        <div class="tweet">
+            <% if t.image.attached? %>
+                <%= image_tag t.image, size: '250x200'%>
+            <% end %>
+            <%= t.Title %>
+            <%= t.Date %>
+            <%= link_to "詳細へ", tweet_path(t.id) %> 
+            <%= link_to "編集する", edit_tweet_path(t.id) %>
+            <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+        </div>
+        <% end %>
+    </div>
+</div>
