@@ -77,5 +77,4 @@ ENV RAILS_LOG_TO_STDOUT=1 \
 
 # 起動スクリプトを使う
 COPY bin/entrypoint.sh /rails/bin/entrypoint.sh
-RUN chmod +x /rails/bin/entrypoint.sh
 ENTRYPOINT ["/rails/bin/entrypoint.sh"]
